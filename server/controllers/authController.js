@@ -13,17 +13,8 @@ exports.getFilteredStudents = async (req, res) => {
   }
 };
 const User = require('../models/User');
-const nodemailer = require('nodemailer');
+const { sendMail } = require('../utils/mailer');
 const bcrypt = require('bcrypt');
-
-// Configure nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'smartstudent761@gmail.com',
-    pass: 'dzfv lqkd lqfn jepk'
-  }
-});
 
 // Utility function to generate 6-digit OTP
 const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
@@ -60,8 +51,7 @@ exports.sendOtp = async (req, res) => {
     user.otpExpiry = expiry;
     await user.save();
 
-    await transporter.sendMail({
-      from: '"SmartStudent" <smartstudent761@gmail.com>',
+    await sendMail({
       to: email,
       subject: 'Your OTP Code',
       html: `<p>Your OTP code is <b>${otp}</b>. It is valid for 5 minutes.</p>`
@@ -225,4 +215,3 @@ exports.getAllStudents = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch students' });
   }
 };
-
