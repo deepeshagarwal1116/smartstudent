@@ -1,0 +1,75 @@
+.auth-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6e48aa;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-form button:hover {
+  background-color: #5a3789;
+}
+
+.switch-link {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.switch-link span {
+  color: #6e48aa;
+  cursor: pointer;
+  font-weight: bold;
+}
+.otp-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.otp-buttons button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 15px;
+  background-color: #6e48aa;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.otp-buttons button:hover:not(:disabled) {
+  background-color: #5a3789;
+}
+
+.otp-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

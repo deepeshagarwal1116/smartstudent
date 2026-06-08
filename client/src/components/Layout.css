@@ -1,0 +1,123 @@
+/* src/components/Layout.css */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #6e48aa;
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar a {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #b39ddb;
+  transition: width 0.3s ease;
+}
+
+.sidebar a:hover::after {
+  width: 100%;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #b39ddb;
+}
+
+.sidebar.teacher-sidebar {
+  background: linear-gradient(135deg, #6e48aa 70%, #b39ddb 100%);
+  border-right: 4px solid #b39ddb;
+  box-shadow: 2px 0 16px #b39ddb33;
+}
+.sidebar.teacher-sidebar .logo {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.sidebar.teacher-sidebar a:hover,
+.sidebar.teacher-sidebar a:focus {
+  color: #fff;
+  background: #b39ddb44;
+  border-radius: 6px;
+  padding-left: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #ede7f6;
+  border-left: 2px solid #b39ddb;
+}
+
+.logout-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 0;
+  text-align: left;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.logout-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.logout-btn:hover::after {
+  width: 100%;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  color: #b39ddb;
+}
